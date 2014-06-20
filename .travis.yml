@@ -25,4 +25,4 @@ install:
 - sudo chown www-data:www-data /var/www/test.php
 - curl -s https://raw.github.com/jlipps/sausage-bun/master/givememysausage.php | php
 script:
-- phpunit --verbose -c tests/phpunit.xml
+- phpunit --verbose -c phpunit.xml
