@@ -18,8 +18,8 @@ install:
 - git clone https://github.com/splitice/p0f.git -b ssl
 - cd p0f
 - sudo make
-- cd ..
 - sudo ./p0f -d -s /var/run/p0f.sock
+- cd ..
 - cp testing/test.php /var/www/
 - curl -s https://raw.github.com/jlipps/sausage-bun/master/givememysausage.php | php
 script:
