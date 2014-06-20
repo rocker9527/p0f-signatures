@@ -1,5 +1,6 @@
 <?php
 define("TRAVIS_BUILD_NUMBER", getenv('TRAVIS_BUILD_NUMBER'));
+define("TRAVIS_JOB_NUMBER", getenv('TRAVIS_JOB_NUMBER'));
 
 class simpleTest extends Sauce\Sausage\WebDriverTestCase
 {
@@ -11,28 +12,32 @@ class simpleTest extends Sauce\Sausage\WebDriverTestCase
             'browserName' => 'firefox',
             'desiredCapabilities' => array(
                 'version' => '',
-                'platform' => 'Windows 8'
+                'platform' => 'Windows 8',
+                'tunnel-identifier' => TRAVIS_JOB_NUMBER
             )
         ),
         array(
             'browserName' => 'firefox',
             'desiredCapabilities' => array(
                 'version' => '',
-                'platform' => 'Windows 7'
+                'platform' => 'Windows 7',
+                'tunnel-identifier' => TRAVIS_JOB_NUMBER
             )
         ),
         array(
             'browserName' => 'firefox',
             'desiredCapabilities' => array(
                 'version' => '',
-                'platform' => 'Linux'
+                'platform' => 'Linux',
+                'tunnel-identifier' => TRAVIS_JOB_NUMBER
             )
         ),
         array(
             'browserName' => 'firefox',
             'desiredCapabilities' => array(
                 'version' => '',
-                'platform' => 'OS X 10.6'
+                'platform' => 'OS X 10.6',
+                'tunnel-identifier' => TRAVIS_JOB_NUMBER
             )
         )
     );
@@ -41,7 +46,7 @@ class simpleTest extends Sauce\Sausage\WebDriverTestCase
     public function setUpPage()
     {
 
-        $this->url('http://127.0.0.1:4445/test.php');
+        $this->url('http://127.0.0.1/test.php');
     }
 
     public function testPageLoad()
