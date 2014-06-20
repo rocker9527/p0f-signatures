@@ -24,4 +24,4 @@ install:
 - curl -s https://raw.github.com/jlipps/sausage-bun/master/givememysausage.php | php
 script:
 - cd sauce-tutorial
-- vendor/bin/phpunit WebDriverDemo.php
+- vendor/bin/phpunit tests/simpleTest.php
