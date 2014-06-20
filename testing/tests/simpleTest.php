@@ -15,7 +15,7 @@ class simpleTest extends Sauce\Sausage\WebDriverTestCase
                 'platform' => 'Windows 8',
                 'tunnel-identifier' => TRAVIS_JOB_NUMBER
             )
-        ),
+        )/*,
         array(
             'browserName' => 'firefox',
             'desiredCapabilities' => array(
@@ -39,15 +39,15 @@ class simpleTest extends Sauce\Sausage\WebDriverTestCase
                 'platform' => 'OS X 10.6',
                 'tunnel-identifier' => TRAVIS_JOB_NUMBER
             )
-        )
+        )*/
     );
 
 
     public function setUpPage()
     {
         //Test the IP of sauce nodes
-        $this->url('http://whatsmyip.org');
-        //$this->url('http://127.0.0.1/test.php');
+        //$this->url('http://whatsmyip.org');
+        $this->url('http://127.0.0.1/test.php');
     }
 
     public function testPageLoad()

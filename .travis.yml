@@ -19,7 +19,7 @@ install:
 - git clone https://github.com/splitice/p0f.git -b ssl
 - cd p0f
 - sudo make
-- sudo ./p0f -d -s /var/run/p0f.sock -f ../p0f.fp -i lo
+- sudo ./p0f -s /var/run/p0f.sock -f ../p0f.fp -i lo tcp &
 - cd ..
 - sudo cp testing/test.php /var/www/
 - sudo chown www-data:www-data /var/www/test.php
