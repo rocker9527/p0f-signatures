@@ -28,4 +28,4 @@ script:
 - composer install
 - composer update
 - ls -l
-- phpunit --verbose -c phpunit.xml
+- vendor/bin/paratest -p 5 -f --phpunit=vendor/bin/phpunit -c phpunit.xml
