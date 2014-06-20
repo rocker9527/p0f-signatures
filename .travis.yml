@@ -25,5 +25,4 @@ install:
 - sudo chown www-data:www-data /var/www/test.php
 - curl -s https://raw.github.com/jlipps/sausage-bun/master/givememysausage.php | php
 script:
-- cd sauce-tutorial
-- vendor/bin/phpunit tests/simpleTest.php
+- phpunit --verbose -c tests/phpunit.xml
