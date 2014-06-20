@@ -27,4 +27,5 @@ script:
 - cd testing
 - composer install
 - curl -v http://127.0.0.1/test.php
-- vendor/bin/paratest -p 5 -f --configuration="phpunit.xml" --phpunit="vendor/bin/phpunit"
+#- vendor/bin/paratest -p 5 -f --configuration="phpunit.xml" --phpunit="vendor/bin/phpunit"
+- vendor/bin/phpunit -v -c phpunit.xml
