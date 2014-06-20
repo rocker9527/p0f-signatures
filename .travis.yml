@@ -28,4 +28,4 @@ script:
 - composer install
 - composer update
 - ls -l
-- vendor/bin/paratest -p 5 -f --phpunit=vendor/bin/phpunit --configuration=phpunit.xml
+- vendor/bin/paratest -p 5 -f --configuration="phpunit.xml" --phpunit="vendor/bin/phpunit"
