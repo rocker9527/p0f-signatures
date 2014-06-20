@@ -41,7 +41,7 @@ class simpleTest extends Sauce\Sausage\WebDriverTestCase
     public function setUpPage()
     {
 
-        $this->url('http://127.0.0.1/test.php');
+        $this->url('http://127.0.0.1:4445/test.php');
     }
 
     public function testPageLoad()
