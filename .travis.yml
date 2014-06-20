@@ -1,24 +1,27 @@
 language: php
 php:
-  - 5.4
-sauce_connect:
-    username: "splitice-os"
-    secure: "Kh8D+sOwk/xeKD8B42m24EiQpxTfy95bqHH88k8fTi5Nr7V9x/nSUOGbyCMYrwrpF+bcbBJ4gnZ644e8MDwTFdS+YE1wHObie6DK8j1Tk4kH9Nd9tPALE6T28ke19krUJzssUcH5aDF1+0UC8J4jel66wsNMS0YNQvkmDT+Wysk="
+- 5.4
+env:
+  global:
+  - secure: Ca3EYUlYvp7ZhcyajnV8x0PSFtqa+l2I2eAZu3RZJeKScRwgndOserZEgNRkBSaRMdQL8JmUsj7vQTUPfTUvk0OQ+3y5m+I7W2DeX1Y0EGfQAR4k9IorLvN1fbDsJ0jHC49KodWL+ehEoqz23fVEi4RgoQkM6Nz6WQlprlz1BCo=
+  - secure: XvyNsZB+VvMNTTi9z95CXmnuSAypLHLXzkK8+gf0IOUm2MfOAYe+jHGxWhOhu+kZHQ5zimRCPeRbaziM7YQiq18TBjLBmotazAyiEEGuP0z50oNxO3z1Ch3IFKWBvq4cpE066P9KmM/jBt7P5K7yiOIoscCfjOO7saSZFOzYhcI=
+addons:
+  sauce_connect: true
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install build-essential
-  - sudo apt-get install nginx php5-fpm
-  - sudo cp testing/nginx.conf /etc/nginx/nginx.conf
-  - sudo /etc/init.d/nginx restart
-  - sudo mkdir -p /var/www
+- sudo apt-get update
+- sudo apt-get install build-essential libpcap-dev
+- sudo apt-get install nginx php5-fpm
+- sudo cp testing/nginx.conf /etc/nginx/nginx.conf
+- sudo /etc/init.d/nginx restart
+- sudo mkdir -p /var/www
 install:
-  - git clone https://github.com/splitice/p0f.git -b ssl
-  - cd p0f
-  - sudo make
-  - cd ..
-  - p0f -d -s /var/run/p0f.sock
-  - cp testing/test.php /var/www/
-  - curl -s https://raw.github.com/jlipps/sausage-bun/master/givememysausage.php | php
+- git clone https://github.com/splitice/p0f.git -b ssl
+- cd p0f
+- sudo make
+- cd ..
+- p0f -d -s /var/run/p0f.sock
+- cp testing/test.php /var/www/
+- curl -s https://raw.github.com/jlipps/sausage-bun/master/givememysausage.php | php
 script:
-  - cd sauce-tutorial
-  - vendor/bin/phpunit WebDriverDemo.php
+- cd sauce-tutorial
+- vendor/bin/phpunit WebDriverDemo.php
