@@ -45,8 +45,9 @@ class simpleTest extends Sauce\Sausage\WebDriverTestCase
 
     public function setUpPage()
     {
-
-        $this->url('http://127.0.0.1/test.php');
+        //Test the IP of sauce nodes
+        $this->url('http://whatsmyip.org');
+        //$this->url('http://127.0.0.1/test.php');
     }
 
     public function testPageLoad()
