@@ -24,7 +24,7 @@ install:
 - git clone https://github.com/splitice/p0f.git -b ssl
 - cd p0f
 - sudo make
-- sudo bash testing/run_pof.sh
+- sudo bash ../testing/run_p0f.sh
 - cd ..
 - sudo cp testing/test.php /var/www/
 - sudo chown www-data:www-data /var/www/test.php
