@@ -50,11 +50,27 @@ class LatestVersionTest extends Sauce\Sausage\WebDriverTestCase
         //$this->url('http://whatsmyip.org');
         $this->url('http://127.0.0.1/test.php');
     }
+	
+	function getSigBrowser(){
+		if(BROWSER_TYPE == "firefox")
+			return 'Firefox';
+			
+		if(BROWSER_TYPE == "chrome")
+			return 'Google Chrome';
+
+        if(BROWSER_TYPE == "opera")
+            return 'Opera';
+
+        if(BROWSER_TYPE == "internetexplorer")
+            return 'MSIE';
+
+        throw new \Exception("Unknown browser type: ".BROWSER_TYPE);
+	}
 
     public function testPageLoad()
     {
-
-        $this->assertContains('Firefox',$this->byCss('*[data-id="http_name"]')->text());
+		
+        $this->assertContains($this->getSigBrowser(),$this->byCss('*[data-id="http_name"]')->text());
 
     }
 
