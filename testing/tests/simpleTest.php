@@ -1,23 +1,24 @@
 <?php
 define("TRAVIS_BUILD_NUMBER", getenv('TRAVIS_BUILD_NUMBER'));
 define("TRAVIS_JOB_NUMBER", getenv('TRAVIS_JOB_NUMBER'));
+define("BROWSER_TYPE", getenv('BROWSER_TYPE'));
 
-class simpleTest extends Sauce\Sausage\WebDriverTestCase
+class latestVersionTest extends Sauce\Sausage\WebDriverTestCase
 {
     protected $base_url = 'http://127.0.0.1/';
     protected $build = TRAVIS_BUILD_NUMBER;
 
     public static $browsers = array(
         array(
-            'browserName' => 'firefox',
+            'browserName' => BROWSER_TYPE,
             'desiredCapabilities' => array(
                 'version' => '',
                 'platform' => 'Windows 8',
                 'tunnel-identifier' => TRAVIS_JOB_NUMBER
             )
-        )/*,
+        ),
         array(
-            'browserName' => 'firefox',
+            'browserName' => BROWSER_TYPE,
             'desiredCapabilities' => array(
                 'version' => '',
                 'platform' => 'Windows 7',
@@ -25,7 +26,7 @@ class simpleTest extends Sauce\Sausage\WebDriverTestCase
             )
         ),
         array(
-            'browserName' => 'firefox',
+            'browserName' => BROWSER_TYPE,
             'desiredCapabilities' => array(
                 'version' => '',
                 'platform' => 'Linux',
@@ -33,13 +34,13 @@ class simpleTest extends Sauce\Sausage\WebDriverTestCase
             )
         ),
         array(
-            'browserName' => 'firefox',
+            'browserName' => BROWSER_TYPE,
             'desiredCapabilities' => array(
                 'version' => '',
                 'platform' => 'OS X 10.6',
                 'tunnel-identifier' => TRAVIS_JOB_NUMBER
             )
-        )*/
+        )
     );
 
 
