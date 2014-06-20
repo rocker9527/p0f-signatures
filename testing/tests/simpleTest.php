@@ -46,6 +46,7 @@ class simpleTest extends Sauce\Sausage\WebDriverTestCase
 
     public function testPageLoad()
     {
+
         $this->assertContains('Firefox',$this->byCss('*[data-id="Firefox"]')->attribute('data-test'));
 
     }
