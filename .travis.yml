@@ -5,8 +5,9 @@ env:
   matrix:
   - BROWSER_TYPE: firefox
   - BROWSER_TYPE: chrome
-  - BROWSER_TYPE: internetexplorer
+  - BROWSER_TYPE: iexplore
   - BROWSER_TYPE: opera
+  - BROWSER_TYPE: safari
   global:
   - secure: Ca3EYUlYvp7ZhcyajnV8x0PSFtqa+l2I2eAZu3RZJeKScRwgndOserZEgNRkBSaRMdQL8JmUsj7vQTUPfTUvk0OQ+3y5m+I7W2DeX1Y0EGfQAR4k9IorLvN1fbDsJ0jHC49KodWL+ehEoqz23fVEi4RgoQkM6Nz6WQlprlz1BCo=
   - secure: XvyNsZB+VvMNTTi9z95CXmnuSAypLHLXzkK8+gf0IOUm2MfOAYe+jHGxWhOhu+kZHQ5zimRCPeRbaziM7YQiq18TBjLBmotazAyiEEGuP0z50oNxO3z1Ch3IFKWBvq4cpE066P9KmM/jBt7P5K7yiOIoscCfjOO7saSZFOzYhcI=
@@ -31,6 +32,6 @@ install:
 script:
 - cd testing
 - composer install
-- curl -v http://127.0.0.1/test.php
+#- curl -v http://127.0.0.1/test.php
 #- vendor/bin/paratest -p 5 -f --configuration="phpunit.xml" --phpunit="vendor/bin/phpunit"
 - vendor/bin/phpunit -v -c phpunit.xml
