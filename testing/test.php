@@ -28,5 +28,5 @@ echo '<html><body>';
 foreach(p0f_client($_SERVER['REMOTE_ADDR'],"/var/run/p0f.sock") as $key=>$value){
 	echo "<div data-id=\"",$key,"\">",$value,"</div>\r\n";
 }
-var_dump($_SERVER);
+//var_dump($_SERVER);
 echo '</body></html>';
