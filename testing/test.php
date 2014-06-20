@@ -24,7 +24,8 @@ function p0f_client($ip, $socket)
  
     return false;
 }
-
+echo '<html><body>';
 foreach(p0f_client($_SERVER['REMOTE_ADDR'],"/var/run/p0f.sock") as $key=>$value){
-	echo $key,": ",$value,"\r\n";
+	echo "<div data-id=\"",$key,"\">",$value,"</div>\r\n";
 }
+echo '</body></html>';
