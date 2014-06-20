@@ -61,6 +61,9 @@ class LatestVersionTest extends Sauce\Sausage\WebDriverTestCase
         if(BROWSER_TYPE == "opera")
             return 'Opera';
 
+        if(BROWSER_TYPE == "safari")
+            return 'Safari';
+
         if(BROWSER_TYPE == "internetexplorer")
             return 'MSIE';
 
