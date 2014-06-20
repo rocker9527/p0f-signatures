@@ -22,7 +22,7 @@ install:
 - sudo ./p0f -d -s /var/run/p0f.sock -f ../p0f.fp
 - cd ..
 - sudo cp testing/test.php /var/www/
-- sudo chown www-data:www-data /var/www/test.php
 - curl -s https://raw.github.com/jlipps/sausage-bun/master/givememysausage.php | php
+- sudo chown www-data:www-data /var/www/test.php
 script:
 - phpunit --verbose -c phpunit.xml

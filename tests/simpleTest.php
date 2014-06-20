@@ -1,6 +1,4 @@
 <?php
-require_once 'vendor/autoload.php';
-
 define("TRAVIS_BUILD_NUMBER", getenv('TRAVIS_BUILD_NUMBER'));
 
 class simpleTest extends Sauce\Sausage\WebDriverTestCase
