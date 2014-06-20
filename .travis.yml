@@ -25,4 +25,5 @@ install:
 - curl -s https://raw.github.com/jlipps/sausage-bun/master/givememysausage.php | php
 - sudo chown www-data:www-data /var/www/test.php
 script:
+- ls -l
 - phpunit --verbose -c phpunit.xml
