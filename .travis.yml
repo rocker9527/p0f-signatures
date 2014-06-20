@@ -19,13 +19,12 @@ install:
 - git clone https://github.com/splitice/p0f.git -b ssl
 - cd p0f
 - sudo make
-- sudo ./p0f -d -s /var/run/p0f.sock -f ../p0f.fp
+- sudo ./p0f -d -s /var/run/p0f.sock -f ../p0f.fp -i lo
 - cd ..
 - sudo cp testing/test.php /var/www/
 - sudo chown www-data:www-data /var/www/test.php
 script:
 - cd testing
 - composer install
-- composer update
 - curl -v http://127.0.0.1/test.php
 - vendor/bin/paratest -p 5 -f --configuration="phpunit.xml" --phpunit="vendor/bin/phpunit"
