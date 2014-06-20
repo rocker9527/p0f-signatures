@@ -2,6 +2,7 @@ language: php
 php:
 - 5.4
 env:
+  matrix:
   - BROWSER_TYPE: firefox
   global:
   - secure: Ca3EYUlYvp7ZhcyajnV8x0PSFtqa+l2I2eAZu3RZJeKScRwgndOserZEgNRkBSaRMdQL8JmUsj7vQTUPfTUvk0OQ+3y5m+I7W2DeX1Y0EGfQAR4k9IorLvN1fbDsJ0jHC49KodWL+ehEoqz23fVEi4RgoQkM6Nz6WQlprlz1BCo=
