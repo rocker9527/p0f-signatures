@@ -1,0 +1,20 @@
+language: php
+php:
+  - 5.4
+services:
+  - mysql
+sauce_connect:
+    username: "splitice-os"
+    secure: "Kh8D+sOwk/xeKD8B42m24EiQpxTfy95bqHH88k8fTi5Nr7V9x/nSUOGbyCMYrwrpF+bcbBJ4gnZ644e8MDwTFdS+YE1wHObie6DK8j1Tk4kH9Nd9tPALE6T28ke19krUJzssUcH5aDF1+0UC8J4jel66wsNMS0YNQvkmDT+Wysk="
+before_install:
+  - apt-get update
+  - apt-get install build-essential
+  - apt-get install nginx php5-fpm
+  - cp testing/nginx.conf /etc/nginx/nginx.conf
+  - /etc/init.d/nginx restart
+install:
+  - git clone https://github.com/splitice/p0f.git -b ssl
+  - cd ssl
+  - make
+  - cd ..
+  - p0f -d -s /var/run/p0f.sock
